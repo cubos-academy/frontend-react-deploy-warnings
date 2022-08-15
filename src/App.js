@@ -5,15 +5,15 @@ function App() {
   const [count, setCount] = useState(0);
   const [numberType, SetNumberType] = useState(0);
 
-  function handleSetNumberType() {
-    if (count % 2 !== 0) {
-      return SetNumberType(`Número impar`);
+  useEffect(() => {
+    function handleSetNumberType() {
+      if (count % 2 !== 0) {
+        return SetNumberType(`Número impar`);
+      }
+
+      SetNumberType(`Número par`);
     }
 
-    SetNumberType(`Número par`);
-  }
-
-  useEffect(() => {
     handleSetNumberType();
   }, [count]);
 
